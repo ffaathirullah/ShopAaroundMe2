@@ -15,7 +15,7 @@ const SignUpAddress = ({navigation}) => {
         <Gap height={16}/>
         <Select label="City"/>
         <Gap height={24}/>
-        <Button text="Sign Up Now" onPress={() => navigation.replace("")}/>
+        <Button text="Sign Up Now" onPress={() => navigation.replace("SuccessSignUp")}/>
       </View>
     </View>
   </ScrollView>);

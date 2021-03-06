@@ -16,6 +16,7 @@ const SuccessSignup = ({navigation}) => {
       <View style={styles.buttonContainer}>
         <Button
           text="Find Items"
+          onPress={() => navigation.replace('MainApp')}
         />
       </View>
     </View>
