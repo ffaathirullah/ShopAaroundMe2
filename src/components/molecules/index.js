@@ -1,3 +1,4 @@
 import Header from './Header';
 import BottomNavigator from './BottomNavigator';
-export {Header, BottomNavigator};
+import ItemsCard from './ItemsCard';
+export {Header, BottomNavigator, ItemsCard};

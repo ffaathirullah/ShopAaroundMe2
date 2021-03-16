@@ -6,6 +6,8 @@ import IcOrderOff from './IcOrderOff.svg';
 import IcOrderOn from './IcOrderOn.svg';
 import IcProfileOff from './IcProfileOff.svg';
 import IcProfileOn from './IcProfileOn.svg';
+import IcStarOn from './ic-star-on.svg';
+import IcStarOff from './ic-star-off.svg';
 
 export {
   Icon_back_white,
@@ -16,4 +18,6 @@ export {
   IcOrderOn,
   IcProfileOff,
   IcProfileOn,
+  IcStarOff,
+  IcStarOn,
 };
