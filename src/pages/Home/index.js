@@ -11,7 +11,19 @@ import {
 import {ProfileDummy} from '../../assets';
 import {ItemsCard} from '../../components';
 import Gap from './../../components/atoms/Gap';
-import {TabView, SceneMap} from 'react-native-tab-view';
+import {TabView, SceneMap, TabBar} from 'react-native-tab-view';
+
+const renderTabBar = (props) => (
+  <TabBar
+    {...props}
+    indicatorStyle={styles.indicator}
+    style={styles.tabBarStyle}
+    tabStyle={styles.tabStyle}
+    renderLabel={({route, focused}) => (
+      <Text style={styles.tabText(focused)}>{route.title}</Text>
+    )}
+  />
+);
 
 const FirstRoute = () => <View style={{flex: 1, backgroundColor: '#ff4081'}} />;
 
@@ -55,6 +67,7 @@ function Home() {
       </View>
       <View style={styles.itemsTabsContainer}>
         <TabView
+          renderTabBar={renderTabBar}
           navigationState={{index, routes}}
           renderScene={renderScene}
           onIndexChange={setIndex}
@@ -87,4 +100,23 @@ const styles = StyleSheet.create({
   itemsTabsContainer: {
     flex: 1,
   },
+  tabView: {backgroundColor: 'white'},
+  indicator: {
+    backgroundColor: '#020202',
+    height: 3,
+    width: '15%',
+    marginLeft: '3%',
+  },
+  tabBarStyle: {
+    backgroundColor: 'white',
+    elevation: 0,
+    shadowOpacity: 0,
+    borderBottomColor: '#F2F2F2',
+    borderBottomWidth: 1,
+  },
+  tabStyle: {width: 'auto'},
+  tabText: (focused) => ({
+    fontFamily: 'Poppins-Medium',
+    color: focused ? '#020202' : '#8D92A3',
+  }),
 });
